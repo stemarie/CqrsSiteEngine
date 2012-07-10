@@ -1,6 +1,8 @@
-# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
-bin
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs) 
+bin 
 obj
+
+
 
 # mstest test results
 
@@ -11,5 +13,6 @@ bin/
 _Resharper.*
 *.suo
 *.user
-App_Data/aspnet.mdf
-App_Data/aspnet_log.ldf
+
+*.mdf
+*.ldf
