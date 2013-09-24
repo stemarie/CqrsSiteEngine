@@ -44,7 +44,7 @@ namespace UserInterface.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(Commands.CreateUserCommand command)
+        public ActionResult Add(Commanding.CreateUserCommand command)
         {
             var service = new Commanding.SimpleTwitterCommandServiceClient();
             service.CreateUser(command);
@@ -80,7 +80,7 @@ namespace UserInterface.Controllers
         {
             foreach (var property in item.Properties)
             {
-                SetProperty(new Commands.SetUserPropertyCommand
+                SetProperty(new Commanding.SetUserPropertyCommand
                                 {
                     UserID = item.Id,
                     Name = property.Key,
@@ -91,13 +91,13 @@ namespace UserInterface.Controllers
             return RedirectToAction("Details", new { id=item.Id });
         }
 
-        static void SetProperty(Commands.SetUserPropertyCommand command)
+        static void SetProperty(Commanding.SetUserPropertyCommand command)
         {
             var service = new Commanding.SimpleTwitterCommandServiceClient();
             service.SetUserProperty(command);
         }
 
-        public ActionResult Delete(Commands.DeleteUserCommand command)
+        public ActionResult Delete(Commanding.DeleteUserCommand command)
         {
             var service = new Commanding.SimpleTwitterCommandServiceClient();
             service.DeleteUser(command);
@@ -111,7 +111,7 @@ namespace UserInterface.Controllers
         }
 
         [HttpPost]
-        public ActionResult SetPassword(Commands.SetUserPasswordCommand command)
+        public ActionResult SetPassword(Commanding.SetUserPasswordCommand command)
         {
             var service = new Commanding.SimpleTwitterCommandServiceClient();
             service.SetUserPassword(command);

@@ -22,7 +22,7 @@ namespace UserInterface.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(CreateNewChannelCommand command)
+        public ActionResult Add(Commanding.CreateNewChannelCommand command)
         {
             var service = new Commanding.SimpleTwitterCommandServiceClient();
 

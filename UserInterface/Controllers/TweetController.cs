@@ -72,7 +72,7 @@ namespace UserInterface.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(PostNewTweetCommand command)
+        public ActionResult Add(Commanding.PostNewTweetCommand command)
         {
             var service = new Commanding.SimpleTwitterCommandServiceClient();
             service.Execute(command);
@@ -80,7 +80,7 @@ namespace UserInterface.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(DeleteTweetCommand command)
+        public ActionResult Delete(Commanding.DeleteTweetCommand command)
         {
             var service = new Commanding.SimpleTwitterCommandServiceClient();
             service.Delete(command);
